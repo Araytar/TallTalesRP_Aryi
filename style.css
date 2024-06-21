@@ -1,0 +1,698 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100;200;300&family=Merienda:wght@300..900&family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/*Font classes*/
+.gwendolyn-regular {
+    font-family: "Gwendolyn", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.gwendolyn-bold {
+    font-family: "Gwendolyn", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.alegreya-regular {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.alegreya-bold {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 750;
+    font-style: normal;
+}
+
+h3 {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal;
+    color: rgb(227, 244, 252);
+    padding: 2px;
+    margin: 0px;
+}
+
+h2 {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(227, 244, 252);
+    padding: 2px;
+    margin: 0px;
+}
+
+p {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    font-size: 15px;
+    color: rgb(227, 244, 252);
+    padding-top: 20px;
+}
+
+/*Some basic preparation because CSS is stupid*/
+body, html {
+    min-height: 500px;
+    margin: 0;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    padding-bottom: 50px;
+    
+}
+
+/*Stars effect... And the moment I realized i might've gone overboard a bit... like always...*/
+.star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 10px 10px 10px 0px rgba(white);
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: twinkling 2s infinite;
+    transform: translateZ(-2px);
+}
+
+.star.small {
+    width: 1px;
+    height: 1px;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+}
+
+@keyframes twinkling {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/*The other stuff*/
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow: auto;
+}  
+
+.main {
+    position: relative;
+    background-color: rgb(17, 17, 17);
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    width: 100%;
+    size: auto;
+    box-sizing: border-box;
+    text-align: left;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    margin-top: 0;
+    padding-bottom: 10%;
+    border-radius: 20px;
+    z-index: 4;
+    margin-top: 200px;
+    max-height: 100%;
+    min-height: 2hv;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 1%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    min-width: 1px;
+    min-height: 1px;
+    top: 0%;
+    color: rgb(8, 8, 8);
+    font-size: 60%;
+    z-index: 3;
+    pointer-events: none;
+    padding-top: 1px;
+    margin: auto;
+}
+
+#title {
+    color: rgb(227, 244, 252);
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    overflow: visible;
+}
+
+.title_box {
+    margin: 20px;
+}
+
+#title::after {
+    border-radius: 6px;
+}
+
+.forestOverlay {
+    position: fixed;
+    bottom: -80px;
+    left: -50px;
+    width: 2100px;
+    z-index: 2;
+}
+
+.fadeIn {
+    animation: fadeIn 1.25s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#description_container {
+    height: auto;
+}
+
+#aryiArt {
+    width: 60%;
+    height: auto;
+    float: right;
+    max-width: 550px;
+    max-height: auto;
+    border-radius: 12px 12px;
+    padding-left: 20px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+#mobile_aryiArt {
+    display: none;
+}
+
+#profile_body {
+    float: left;
+}
+
+.profile {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.profile_point {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(227, 244, 252);
+}
+
+.profile_title {
+    padding-right: 5px;
+}
+
+.personality_list {
+    margin: 0px;
+    margin-left: 25px;
+    padding: 0px;
+}
+
+.personality_trait {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(227, 244, 252);
+}
+
+.physical_list {
+    margin: 0px;
+    margin-left: 25px;
+    padding: 0px;
+}
+
+#physical_container {
+    align-items: left;
+    padding-top: 5px;
+}
+
+.physical_trait {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(227, 244, 252);
+}
+
+.lore_container {
+    align-items: left;
+    padding-top: 20px;
+}
+
+#lore_header {
+    position: relative;
+    left: auto;
+    align-self: center;
+    margin-top: 10px;
+}
+
+#lore {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    font-size: 15px;
+    color: rgb(227, 244, 252);
+    padding-top: 20px;
+}
+
+#profile_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background_container {
+    height: auto;
+}
+
+#lore_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#triggerwarning_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#triggerwarning {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 750;
+    font-style: normal;
+    font-size: 15px;
+    color: rgb(148, 3, 3);
+    padding: 0px;
+    margin: 0px;
+}
+
+.mobile_lore_collaps {
+    background-color: rgb(8, 8, 8);
+    width: 100%;
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal;
+    color: rgb(227, 244, 252);
+    border: none;
+    display: none;
+}
+
+.active {
+    background-color: rgb(227, 244, 252);
+    color: #090A0F;
+}
+
+.mobile_lore_content {
+    padding: 0 18px;
+    display: none;
+    overflow: scroll;
+    background-color: black;
+}
+
+.mobile_lore_collaps + .content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.mobile_lore_collaps.active + .content {
+display: block;
+max-height: 500px;
+}
+
+/*Phone S and M Screen Adjustment*/
+@media (max-width: 380px) {
+    #aryiArt {
+        display: none;
+    }
+
+    #mobile_aryiArt {
+        display: flex;
+        height: auto;
+        width: 90%;
+        padding: 5%;
+        align-self: center;
+        border-radius: 10%;
+    }
+
+    #mobile_aryiArt_container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #title {
+        font-size: 50px;
+    }
+
+    #profile_header {
+        font-size: 13px;
+        margin-top: 5%;
+    }
+
+    .profile_title {
+        font-size: 15px;
+    }
+
+    .profile_point {
+        font-size: 15px
+    }
+
+    #personality_header {
+        font-size: 15px;
+    }
+
+    .personality_trait {
+        font-size: 14px;
+    }
+
+    #physical_header {
+        font-size: 15px;
+    }
+
+    .physical_trait {
+        font-size: 14px;
+    }
+
+    #triggerwarning {
+        font-size: 12px;
+        align-self: center;
+        padding-bottom: 15px;
+    }
+
+    #lore {
+        display: none;
+    }
+
+    .mobile_lore_collaps {
+        display: inline;
+    }
+
+    #mobile_lore {
+        font-family: "Alegreya", serif;
+        font-optical-sizing: auto;
+        font-weight: 250;
+        font-style: normal;
+        font-size: 15px;
+        color: rgb(227, 244, 252);
+        padding-top: 20px;
+    }
+}
+
+/*Phone L Screen adjustment*/
+@media (min-width: 380px) and (max-width: 780px) {
+    
+    #aryiArt {
+        display: none;
+    }
+
+    #mobile_aryiArt {
+        display: flex;
+        height: auto;
+        width: 90%;
+        padding: 5%;
+        align-self: center;
+        border-radius: 10%;
+    }
+
+    #mobile_aryiArt_container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #title {
+        font-size: 700%;
+    }
+
+    #profile_header {
+        font-size: 23px;
+        margin-top: 5%;
+    }
+
+    .profile_title {
+        font-size: 26px;
+    }
+
+    .profile_point {
+        font-size: 26px
+    }
+
+    #personality_header {
+        font-size: 24px;
+    }
+
+    .personality_trait {
+        font-size: 20px;
+    }
+
+    #physical_header {
+        font-size: 24px;
+    }
+
+    .physical_trait {
+        font-size: 20px;
+    }
+
+    #mobile_lore {
+        font-family: "Alegreya", serif;
+        font-optical-sizing: auto;
+        font-weight: 250;
+        font-style: normal;
+        font-size: 30px;
+        color: rgb(227, 244, 252);
+        padding-top: 20px;
+    }
+
+    #triggerwarning {
+        font-size: 18px;
+        align-self: center;
+        padding-bottom: 15px;
+    }
+
+    #lore {
+        display: none;
+    }
+
+    .mobile_lore_collaps {
+        display: inline;
+    }
+}
+
+/*Laptop (1024px) Screen adjustment*/
+@media (min-width: 781px) and (max-width: 1024px) {
+    
+    .main {
+        position: relative;
+        background-color: rgb(17, 17, 17);
+        padding: 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 80%;
+        width: 100%;
+        size: auto;
+        box-sizing: border-box;
+        text-align: left;
+        height: 100%;
+        min-height: 100%;
+        overflow: hidden;
+        margin-top: 0;
+        padding-bottom: 10%;
+        border-radius: 20px;
+        z-index: 4;
+        margin-top: 300px;
+        max-height: 100%;
+        min-height: 2hv;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 1%;
+    }
+
+    #title {
+        font-size: 1300%;
+    }
+
+    #profile_header {
+        font-size: 18.2px;
+        margin-top: 1%;
+    }
+
+    .profile_title {
+        font-size: 22px;
+    }
+
+    .profile_point {
+        font-size: 22px
+    }
+
+    #personality_header {
+        font-size: 25px;
+    }
+
+    .personality_trait {
+        font-size: 24px;
+    }
+
+    #physical_header {
+        font-size: 25px;
+    }
+
+    .physical_trait {
+        font-size: 24px;
+    }
+
+    #lore_container {
+        font-size: 25px;
+    }
+
+    #triggerwarning {
+        font-size: 21.2px;
+        align-self: center;
+        padding-bottom: 1px;
+    }
+
+    #lore {
+        font-size: 24px;
+    }
+}
+
+/* PC/Monitor (1920px) Screen adjustment*/
+@media (min-width: 1025px) and (max-width: 1920px) {
+    
+    .main {
+        position: relative;
+        background-color: rgb(17, 17, 17);
+        padding: 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 80%;
+        width: 100%;
+        size: auto;
+        box-sizing: border-box;
+        text-align: left;
+        height: 100%;
+        min-height: 100%;
+        overflow: hidden;
+        padding-bottom: 10%;
+        border-radius: 20px;
+        z-index: 4;
+        margin-top: 23vw;
+        max-height: 100%;
+        min-height: 2hv;
+        min-width: 20%;
+        max-width: 85%;
+        padding: 1%;
+    }
+
+    #title {
+        font-size: 13vw;
+        margin-top: 2vw;
+    }
+
+    #profile_header {
+        font-size: 1.4vw;
+        margin-top: 1%;
+    }
+
+    .profile_title {
+        font-size: 1.9vw;
+    }
+
+    .profile_point {
+        font-size: 1.9vw;
+    }
+
+    #personality_header {
+        font-size: 1.7vw;
+    }
+
+    .personality_trait {
+        font-size: 1.6vw;
+    }
+
+    #physical_header {
+        font-size: 1.7vw;
+    }
+
+    .physical_trait {
+        font-size: 1.6vw;
+    }
+
+    #lore_container {
+        font-size: 1.6vw;
+    }
+
+    #triggerwarning {
+        font-size: 1.2vw;
+        align-self: center;
+        padding-bottom: 1px;
+    }
+
+    #lore {
+        font-size: 1.3vw;
+    }
+
+    #aryiArt {
+        width: 48vw;
+        height: auto;
+        max-width: 661.71px;
+        max-height: 625px;
+    }
+}
